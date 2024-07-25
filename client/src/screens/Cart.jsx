@@ -13,12 +13,12 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    console.log("bef fetching",{
-      order_data: data,
-      email: userEmail,
-      order_date: new Date().toString().replace("GMT+0530 (India Standard Time)","")
-    });
-    let response = await fetch("http://localhost:3000/api/orderData", {
+    // console.log("bef fetching",{
+    //   order_data: data,
+    //   email: userEmail,
+    //   order_date: new Date().toString().replace("GMT+0530 (India Standard Time)","")
+    // });
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/api/orderData`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -17,9 +17,9 @@ export default function Login() {
 
   const fetchFormData = async (e) => {
     e.preventDefault();
-    console.log(credentials);
+    // console.log(credentials);
 
-    let response = await fetch("http://localhost:3000/api/login", {
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

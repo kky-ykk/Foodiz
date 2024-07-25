@@ -7,8 +7,8 @@ export default function MyOrder() {
     const [orderData, setOrderData] = useState({});
 
     const fetchMyOrder = async () => {
-        console.log(localStorage.getItem('userEmail'));
-        await fetch("http://localhost:3000/api/myorderData", {
+        // console.log(localStorage.getItem('userEmail'));
+        await fetch(`${process.env.REACT_APP_API_URL}/api/myorderData`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ export default function MyOrder() {
         }).then(async (res) => {
             let response = await res.json();
             await setOrderData(response);
-            await console.log("datas", orderData);
+            // await console.log("datas", orderData);
         });
     };
 

@@ -5,11 +5,10 @@ const CartDispatchContext=createContext();
 
 const reducer=(currItem,action)=>{
     let newData=[];
-    console.log(action);
     switch (action.type) {
         case "ADD":
             newData=[...currItem,{ id: action.id, name: action.name, qty: action.qty, size: action.size, price: action.price, img: action.img }];
-            console.log("newData of cards",newData);
+            
             break;
         
         case "REMOVE":
@@ -21,7 +20,6 @@ const reducer=(currItem,action)=>{
             let arr = [...currItem]
             arr.find((food, index) => {
                 if (food.id === action.id) {
-                    console.log(food.qty, parseInt(action.qty), action.price + food.price)
                     arr[index] = { ...food, qty: parseInt(action.qty) + food.qty, price: action.price + food.price }
                 }
                     return arr

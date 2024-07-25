@@ -23,8 +23,6 @@ export default function Cards(probs) {
         break;
       }
     }
-    console.log("food:",food)
-    console.log(new Date())
     if (food.length!=0) {
       if (food.size === size) {
         await dispatch({ type: "UPDATE", id: foodItem._id, price: finalPrice, qty: qty })
@@ -32,7 +30,7 @@ export default function Cards(probs) {
       }
       else if (food.size !== size) {
         await dispatch({ type: "ADD", id: foodItem._id, name: foodItem.name, price: finalPrice, qty: qty, size: size,img: foodItem.img })
-        console.log("Size different so simply ADD one more to the list")
+        
         return
       }
       return
@@ -47,7 +45,6 @@ export default function Cards(probs) {
       size: size,
       img: foodItem.img,
     });
-    // console.log("data :", data);
   }
 
   let finalPrice = qty * parseInt(probs.options[0][size]);

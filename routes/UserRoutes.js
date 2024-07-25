@@ -23,7 +23,7 @@ router.post("/createuser",[
             email:req.body.email,
             location:req.body.location
         }
-        console.log(data);
+        // console.log(data);
 
         //creating hash password
         const salt=await bcrypt.genSalt(10);
@@ -55,12 +55,11 @@ router.post("/login",[
             password:req.body.password,
             email:req.body.email
         }
-        console.log(data);
+        // console.log(data);
         const user=await User.findOne({email:data.email});
         if(!user){
             return res.status(404).json({message:"invalid email id",success});
         }
-        console.log(user);
 
         const compareRes=await bcrypt.compare(data.password,user.password);
 
@@ -85,14 +84,12 @@ router.post("/login",[
 });
 
 router.post('/orderData', async (req, res) => {
-    console.log(req.body);
     let data = req.body.order_data
     await data.splice(0,0,{Order_date:req.body.order_date})
-    console.log("1231242343242354",req.body.email)
 
     //if email not exisitng in db then create: else: InsertMany()
     let eId = await Order.findOne({ 'email': req.body.email })    
-    console.log(eId);
+    // console.log(eId);
     if (eId===null) {
         try {
             await Order.create({

@@ -3,7 +3,6 @@ const path = require('path');
 
 const cors=require("cors");
 
-console.log("dirname is ::",__dirname);
 
 const app = express()
 require('dotenv').config();
