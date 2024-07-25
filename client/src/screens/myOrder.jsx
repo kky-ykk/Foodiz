@@ -8,7 +8,7 @@ export default function MyOrder() {
 
     const fetchMyOrder = async () => {
         // console.log(localStorage.getItem('userEmail'));
-        await fetch(`${process.env.REACT_APP_API_URL}/api/myorderData`, {
+        await fetch(`https://foodiz.onrender.com/api/myorderData`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

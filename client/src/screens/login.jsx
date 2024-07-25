@@ -19,7 +19,7 @@ export default function Login() {
     e.preventDefault();
     // console.log(credentials);
 
-    let response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
+    let response = await fetch(`https://foodiz.onrender.com/api/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

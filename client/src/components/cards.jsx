@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCart, useDispatchCart } from "./contextReducer";
 
+
 export default function Cards(probs) {
+
+  
+
   const optObj = probs.options[0];
   const optionsKeys = Object.keys(optObj);
 

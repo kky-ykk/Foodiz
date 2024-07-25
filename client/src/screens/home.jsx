@@ -9,7 +9,7 @@ export default function Home() {
     const [foodCat,setFoodCat]=useState([]);
 
     const loadData=async ()=>{
-        let response = await fetch(`${process.env.REACT_APP_API_URL}/api/foodData`, {
+        let response = await fetch(`https://foodiz.onrender.com/api/foodData`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

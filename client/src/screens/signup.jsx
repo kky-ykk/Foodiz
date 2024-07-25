@@ -19,7 +19,7 @@ export default function Signup() {
     e.preventDefault();
     // console.log(credentials);
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/createuser`, {
+    const response = await fetch(`https://foodiz.onrender.com/api/createuser`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

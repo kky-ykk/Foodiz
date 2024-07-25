@@ -18,7 +18,7 @@ export default function Cart() {
     //   email: userEmail,
     //   order_date: new Date().toString().replace("GMT+0530 (India Standard Time)","")
     // });
-    let response = await fetch(`${process.env.REACT_APP_API_URL}/api/orderData`, {
+    let response = await fetch(`https://foodiz.onrender.com/api/orderData`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
